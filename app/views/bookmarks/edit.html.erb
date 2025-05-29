@@ -1,0 +1,17 @@
+<div class="container my-5">
+  <div class="form-wrapper">
+    <h1 class="form-title">✏️ Modifier le bookmark</h1>
+
+    <%= form_with model: [@list, @bookmark], local: true do |form| %>
+      <div class="mb-3">
+        <%= form.label :comment, "Commentaire", class: "form-label" %>
+        <%= form.text_field :comment, class: "form-control" %>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mt-4">
+        <%= link_to "← Retour à la liste", list_path(@list), class: "btn custom-btn-outline" %>
+        <%= form.submit "💾 Mettre à jour", class: "btn custom-btn-gradient" %>
+      </div>
+    <% end %>
+  </div>
+</div>

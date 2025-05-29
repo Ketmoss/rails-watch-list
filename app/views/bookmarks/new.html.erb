@@ -1,0 +1,27 @@
+<%= form_with model: [@list, @bookmark], local: true do |form| %>
+  <% if @bookmark.errors.any? %>
+    <div class="alert alert-danger">
+      <h6>Erreurs dans le formulaire :</h6>
+      <ul class="mb-0">
+        <% @bookmark.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :movie_id, "Choisir un film", class: "form-label" %>
+    <%= form.collection_select :movie_id, @movies, :id, :title, prompt: "Sélectionner un film", class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :comment, "Commentaire", class: "form-label" %>
+    <%= form.text_field :comment, class: "form-control", placeholder: "Pourquoi ce film ?" %>
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center">
+  <%= form.submit "🎬 Ajouter à la liste", class: "btn custom-btn-gradient" %>
+  <%= link_to "← Retour", list_path(@list), class: "btn custom-btn-outline" %>
+</div>
+<% end %>

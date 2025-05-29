@@ -3,3 +3,225 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+/* Modern form design */
+/* Douceur inspirée de Dribbble */
+form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+  max-width: 600px;
+  margin: auto;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 0.75rem;
+  border: 1px solid #dee2e6;
+  padding: 0.75rem 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #a370f0;
+  box-shadow: 0 0 0 0.25rem rgba(163, 112, 240, 0.2);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #a370f0, #7f53ac);
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.7rem 1.4rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(127, 83, 172, 0.4);
+}
+
+.btn-outline-secondary {
+  border-radius: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #ced4da;
+  color: #6c757d;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+.alert-danger {
+  background-color: #ffe0e3;
+  color: #842029;
+  border-left: 6px solid #f08080;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Entrée fluide */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-wrapper {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  max-width: 600px;
+  margin: 2rem auto;
+  animation: fadeSlideIn 0.6s ease;
+}
+
+.form-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Réutilisation des styles de bouton */
+.custom-btn-gradient {
+  background: linear-gradient(135deg, #a370f0, #7f53ac);
+  border: none;
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 14px rgba(127, 83, 172, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.custom-btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(127, 83, 172, 0.45);
+}
+
+/* Animation douce d’apparition */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-btn-gradient {
+  background: linear-gradient(135deg, #a370f0, #7f53ac);
+  border: none;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 14px rgba(127, 83, 172, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.custom-btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(127, 83, 172, 0.45);
+}
+
+.custom-btn-outline {
+  background-color: transparent;
+  border: 2px solid #ced4da;
+  color: #6c757d;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.custom-btn-outline:hover {
+  background-color: #f8f9fa;
+  color: #343a40;
+  border-color: #adb5bd;
+}
+
+.custom-btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-btn-danger:hover {
+  background-color: #bb2d3b;
+  transform: scale(1.03);
+}
+
+.list-header {
+  animation: fadeSlideIn 0.5s ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.list-link {
+  font-size: 1.1rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #f1f1f1;
+  font-weight: 500;
+}
+
+.list-link:hover {
+  background-color: #f9f9fc;
+  padding-left: 2rem;
+  color: #7f53ac;
+  text-decoration: none;
+}
+
+/* Bouton gradient comme précédemment */
+.custom-btn-gradient {
+  background: linear-gradient(135deg, #a370f0, #7f53ac);
+  border: none;
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 14px rgba(127, 83, 172, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.custom-btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(127, 83, 172, 0.45);
+}

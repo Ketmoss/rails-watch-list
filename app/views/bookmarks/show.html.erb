@@ -1,0 +1,10 @@
+<div class="container my-5">
+  <div class="comment-card">
+    <h1 class="comment-title">💬 Commentaire</h1>
+    <p class="comment-content"><%= @bookmark.comment %></p>
+
+    <div class="text-center mt-4">
+      <%= link_to "← Retour à la liste", list_path(@bookmark.list), class: "btn custom-btn-outline" %>
+    </div>
+  </div>
+</div>

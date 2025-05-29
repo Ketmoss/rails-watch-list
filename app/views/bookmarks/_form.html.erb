@@ -1,0 +1,12 @@
+<div class="form-wrapper">
+  <h2 class="form-title">🎥 Ajouter un film à la liste <%= @list.name %></h2>
+
+  <%= form_with model: [@list, @bookmark], local: true do |form| %>
+    <div class="mb-3">
+      <%= form.label :movie_id, "Choisissez un film", class: "form-label" %>
+      <%= form.collection_select :movie_id, @movies, :id, :title, prompt: "Sélectionner un film", class: "form-control" %>
+    </div>
+
+    <%= form.submit "➕ Ajouter", class: "btn custom-btn-gradient" %>
+  <% end %>
+</div>

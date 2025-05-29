@@ -1,0 +1,16 @@
+<div class="container my-5">
+  <div class="form-wrapper">
+    <h1 class="form-title">✏️ Modifier la liste</h1>
+
+    <%= form_with model: @list, local: true do |form| %>
+      <div class="mb-3">
+        <%= form.label :name, "Nom de la liste", class: "form-label" %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="text-end">
+        <%= form.submit "💾 Mettre à jour la liste", class: "btn custom-btn-gradient" %>
+      </div>
+    <% end %>
+  </div>
+</div>

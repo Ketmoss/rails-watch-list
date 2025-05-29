@@ -1,0 +1,17 @@
+<% content_for :title, "Mes listes de films" %>
+
+<div class="container my-5">
+  <div class="text-center mb-4">
+    <h1 class="display-5 fw-bold">🎞️ Mes listes de films</h1>
+  </div>
+
+  <div class="list-group shadow-sm rounded-3 mb-4 text-center">
+    <% @lists.each do |list| %>
+      <%= link_to list.name, list, class: "list-group-item list-group-item-action list-link" %>
+    <% end %>
+  </div>
+
+  <div class="text-center">
+    <%= link_to "➕ Créer une nouvelle liste", new_list_path, class: "btn custom-btn-gradient" %>
+  </div>
+</div>
