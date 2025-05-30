@@ -1,4 +1,5 @@
 <%= form_with model: [@list, @bookmark], local: true do |form| %>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <% if @bookmark.errors.any? %>
     <div class="alert alert-danger">
       <h6>Erreurs dans le formulaire :</h6>
@@ -23,5 +24,7 @@
   <div class="d-flex justify-content-between align-items-center">
   <%= form.submit "🎬 Ajouter à la liste", class: "btn custom-btn-gradient" %>
   <%= link_to "← Retour", list_path(@list), class: "btn custom-btn-outline" %>
-</div>
+  </div>
+<hr> <!----------------------------------------------------------------------->
+  <%=link_to "Rechercher un film", movies_path %>
 <% end %>

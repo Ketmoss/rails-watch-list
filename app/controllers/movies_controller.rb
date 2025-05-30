@@ -1,49 +1,32 @@
+# app/controllers/movies_controller.rb
 class MoviesController < ApplicationController
+  before_action :set_list, only: [:index]
 
   def index
     @movies = Movie.all
   end
 
-  def new
-    @movie = Movie.new
-  end
-
   def create
-    @movie = Movie.new(movie_params)
-    if @movie.save
-      redirect_to @movie, notice: 'Movie was successfully created.'
-    else
-      render :new
+    @movie = Movie.find_or_create_by(imdb_id: movie_params[:imdb_id]) do |movie|
+      movie.assign_attributes(movie_params.except(:imdb_id))
+    end
+
+    respond_to do |format|
+      if @movie.persisted? || @movie.save
+        format.json { render json: @movie }
+      else
+        format.json { render json: { errors: @movie.errors.full_messages }, status: :unprocessable_entity }
+      end
     end
   end
-
-  def show
-    @movie = Movie.find(params[:id])
-  end
-
-  def edit
-    @movie = Movie.find(params[:id])
-  end
-
-  def update
-    @movie = Movie.find(params[:id])
-    if @movie.update(movie_params)
-      redirect_to @movie, notice: 'Movie was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @movie = Movie.find(params[:id])
-    @movie.destroy
-    redirect_to movies_path, notice: 'Movie was successfully deleted.'
-  end
-
 
   private
 
+  def set_list
+    @list = List.find(params[:list_id]) if params[:list_id]
+  end
+
   def movie_params
-    params.require(:movie).permit(:title, :overview, :poster_url, :rating)
+    params.require(:movie).permit(:title, :overview, :poster_url, :rating, :imdb_id)
   end
 end

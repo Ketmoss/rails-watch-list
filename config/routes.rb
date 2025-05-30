@@ -10,7 +10,11 @@ Rails.application.routes.draw do
 
     resources :movies
     resources :lists do
-      resources :bookmarks, only: [:new, :create, :show, :edit, :update, :destroy]
+      resources :bookmarks do
+        collection do
+      get :create_from_omdb
       end
+    end
+  end
       resources :bookmarks, only: [:destroy]
 end

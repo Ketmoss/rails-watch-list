@@ -3,3 +3,6 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
+// app/javascript/application.js
+import "./movie_search"
+//import "./ajax_search"

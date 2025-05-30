@@ -14,16 +14,16 @@
         turbo_confirm: "Êtes-vous sûr de vouloir supprimer cette liste ?"
       },
       class: "btn custom-btn-danger" %>
-    <%= link_to "➕ Ajouter un film", new_list_bookmark_path(@list), class: "btn custom-btn-gradient" %>
+    <%= link_to "➕ Ajouter un film", movies_path, class: "btn custom-btn-gradient" %>
   </div>
 
   <h2 class="mb-3 text-center">🎬 Films dans la liste</h2>
   <ul class="list-group shadow-sm rounded-3 overflow-hidden">
     <% @list.bookmarks.each do |bookmark| %>
       <li class="list-group-item d-flex justify-content-between align-items-center py-3 px-4">
-        <%= link_to bookmark.movie.title, list_bookmark_path(@list, bookmark), class: "text-decoration-none fw-medium text-dark" %>
+        <%= link_to bookmark.movie.title, list_bookmark_path(@list, bookmark), class: "text-decoration-none fw-medium text-blue" %>
         <div class="d-flex gap-2">
-          <%= link_to "❌ Supprimer", list_bookmark_path(@list, bookmark),
+          <%= link_to "Supprimer", list_bookmark_path(@list, bookmark),
               data: { turbo_method: :delete, turbo_confirm: "Supprimer ce film ?" },
               class: "btn btn-sm custom-btn-danger" %>
         </div>

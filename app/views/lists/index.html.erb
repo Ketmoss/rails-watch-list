@@ -1,8 +1,8 @@
-<% content_for :title, "Mes listes de films" %>
+<% content_for :title, "THE WATCHER" %>
 
 <div class="container my-5">
   <div class="text-center mb-4">
-    <h1 class="display-5 fw-bold">🎞️ Mes listes de films</h1>
+    <h1 class="display-5 fw-bold">🎥 THE WATCHER</h1>
   </div>
 
   <div class="list-group shadow-sm rounded-3 mb-4 text-center">
@@ -13,5 +13,7 @@
 
   <div class="text-center">
     <%= link_to "➕ Créer une nouvelle liste", new_list_path, class: "btn custom-btn-gradient" %>
+    <%= link_to "➕ Ajouter un film", movies_path, class: "btn custom-btn-gradient" %>
+  </div>
   </div>
 </div>

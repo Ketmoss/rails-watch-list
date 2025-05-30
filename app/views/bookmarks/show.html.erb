@@ -1,6 +1,11 @@
-<div class="container my-5">
+<div class="container my-5 text-center">
+  <h1 class="display-5 fw-bold mb-4">🎬  Overview</h1>
+  <span class="text-muted"><%= @bookmark.movie.overview %></span>
+</div>
+<hr>
+<div class="container my-5 text-center">
   <div class="comment-card">
-    <h1 class="comment-title">💬 Commentaire</h1>
+    <h1 class="comment-title">💬 Comment</h1>
     <p class="comment-content"><%= @bookmark.comment %></p>
 
     <div class="text-center mt-4">

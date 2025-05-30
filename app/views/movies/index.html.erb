@@ -1,0 +1,23 @@
+
+<div class="container mt-5">
+<div class="mb-3 text-center">
+  <%= link_to "Retour", lists_path, class: "btn custom-btn-outline" %>
+  <hr>
+    <label class="form-label">Rechercher un nouveau film</label>
+    <form id="search-movies">
+      <div class="d-flex">
+        <input type="text" id="movie-name" class="form-control" placeholder="Tapez le nom d'un film...">
+        <button type="submit" class="btn btn-outline-primary ms-2">Rechercher</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Résultats de recherche -->
+  <div id="movie-cards" class="row mb-3"></div>
+</div>
+
+<% if params[:list_id] %>
+  <div data-list-id="<%= params[:list_id] %>">
+    <!-- votre contenu -->
+  </div>
+<% end %>
